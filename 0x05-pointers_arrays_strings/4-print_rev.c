@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <string.h>
 #include "main.h"
 
 /**
@@ -6,19 +8,12 @@
  * @s: passed pointer argument for string
  * Return: void
  */
+
 void print_rev(char *s)
 {
-	int len = 0;
+	int len = strlen(s);
 
-	while (*(s + len) != '\0')
-	{
-		len++;
-	}
-	len--;
-	while (len >= 0)
-	{
-		_putchar(*(s + len));
-		len--;
-	}
-	_putchar('\n');
+	while (len--)
+		putchar(*(s + len));
+	putchar(10);
 }
