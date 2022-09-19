@@ -1,4 +1,3 @@
-#include "mainn.h"
 #include "main.h"
 
 /**
@@ -7,21 +6,25 @@
  *
  * Return: void
  */
+
 void rev_string(char *s)
 {
-	int len = 0, i, length;
-	char c;
-	while (*(s + len) != '\0')
+	int i, j, k, temp;
+
+	i = 0;
+	while (s[i] != '\0')
 	{
-		len++;
+		i++;
 	}
-	length = len;
-	len--;
-	for (i = 0; i < length / 2; i++)
+	k = 0;
+	j = i - 1;
+
+	while (k < j)
 	{
-		c = *(s + i);
-		*(s + i) = *(s + len);
-		*(s + len) = c;
-		len--;
+		temp = s[k];
+		s[k] = s[j];
+		s[j] = temp;
+		k++;
+		j--;
 	}
 }
